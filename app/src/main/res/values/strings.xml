@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project1</string>
+    <string name="add">Add</string>
+    <string name="about">About</string>
+    <string name="remove">Remove</string>
+    <string name="companyName">Company Name</string>
+    <string name="companyCode">Company Code</string>
+    <string name="currentPrice">Real Time Price</string>
+    <string name="change">Change From Previous Closing</string>
+</resources>
