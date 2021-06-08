@@ -6,7 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
-public interface RealTimePriceApi {
+public interface StockApis {
     @Headers({"x-rapidapi-key: def66e2ad7msh812217da7d5b03fp19e120jsnd95c93d205bb",
               "x-rapidapi-host: twelve-data1.p.rapidapi.com"})
     @GET("price")

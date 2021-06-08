@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +27,7 @@ import android.view.View;
 
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -87,24 +90,13 @@ public class MainActivity extends AppCompatActivity {
                         c.getString(6)));
             } while(c.moveToNext());
         }
-        db.insertStock("Amazon","AMZN","amazon.com",
-                "https://logo.clearbit.com/amazon.com","3516.25","3.51");
+        //db.insertStock("Amazon","AMZN","amazon.com",
+        //        "https://logo.clearbit.com/amazon.com","3516.25","3.51");
         //db.close();
 
 
 
-//        Stock testStock = new Stock();
-//        testStock.setPictureUrl_("https://logo.clearbit.com/amazon.com");
-//        testStock.setName_("Amazon");
-//        testStock.setPrice_("$3516.25");
-//        testStock.setChange_("+3.53%");
-//        Stock testStock2 = new Stock();
-//        testStock2.setPictureUrl_("https://logo.clearbit.com/tesla.com");
-//        testStock2.setName_("Tesla");
-//        testStock2.setPrice_("$610.15");
-//        testStock2.setChange_("-1.51%");
-//        stocks.add(testStock);
-//        stocks.add(testStock2);
+
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(stocks, getApplicationContext());
@@ -210,5 +202,26 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonNew(View view) {
         Intent intent = new Intent(this,AddNewActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("newStock", Context.MODE_PRIVATE);
+        boolean hasAdded = settings.getBoolean("hasAdded", true);
+        if(!hasAdded){
+            String jsonString = settings.getString("stockObj", "");
+            Gson gson = new Gson();
+            Stock stock = gson.fromJson(jsonString,Stock.class);
+            //stock.setPictureUrl_(" ");
+            stocks.add(stock);
+            recyclerViewAdapter.notifyItemInserted(stocks.size()-1);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("hasAdded", true);
+            editor.apply();
+            db.open();
+            long status = db.insertStock(stock.getName_(),stock.getSymbol_()," ", stock.getPictureUrl_(),
+                    stock.getPrice_(),stock.getChange_());
+        }
     }
 }

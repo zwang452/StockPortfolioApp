@@ -1,5 +1,6 @@
 package com.zwang.project1;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Glide.with(context).asBitmap().load(stocks.get(position).getPictureUrl_()).into(holder.image);
         holder.companyName.setText(stocks.get(position).getName_());
         holder.price.setText(stocks.get(position).getPrice_());
-        holder.change.setText(stocks.get(position).getChange_());
+        StringBuilder change = new StringBuilder(stocks.get(position).getChange_());
+        if(change.charAt(0) == '-'){
+            holder.change.setBackgroundColor(Color.RED);
+            holder.change.setTextColor(Color.WHITE);
+        }
+        else if(!change.toString().equals("0.00%")){
+            holder.change.setBackgroundResource(R.color.solidGreen);
+            change.insert(0, "+");
+            holder.change.setTextColor(Color.WHITE);
+        }
+        holder.change.setText(change.toString());
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

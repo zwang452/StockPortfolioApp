@@ -20,9 +20,10 @@
             android:id="@+id/company_name"
             android:layout_width="0dp"
             android:layout_weight=".4"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:text="company name"
+            android:gravity="center"
             android:textColor="#000"
             android:textSize="17sp" />
 
@@ -30,9 +31,10 @@
             android:id="@+id/price"
             android:layout_width="0dp"
             android:layout_weight=".35"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dip"
             android:layout_toRightOf="@+id/company_name"
+            android:gravity="center"
             android:text="price"
             android:textColor="#000"
             android:textSize="17sp" />
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dip"
             android:layout_toRightOf="@+id/price"
+            android:gravity="center"
             android:text="change"
             android:textColor="#000"
             android:textSize="17sp" />

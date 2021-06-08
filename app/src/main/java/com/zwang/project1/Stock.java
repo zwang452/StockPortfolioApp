@@ -3,14 +3,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class  Stock {
     private int id_;
+    @SerializedName("symbol")
     private String symbol_ = "";
     private String url_ = "";
 
     private String pictureUrl_ = "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Fanshawe_College_Logo_vecotrized.svg/1200px-Fanshawe_College_Logo_vecotrized.svg.png";
-    @SerializedName("price")
     private String price_ = "0";
+    @SerializedName("name")
     private String name_ = "";
     private String change_ = "0";
+    @SerializedName("previous_close")
+    private String previousClose = "";
+
+    public String getPreviousClose() {
+        return previousClose;
+    }
+
+    public void setPreviousClose(String previousClose) {
+        this.previousClose = previousClose;
+    }
 
     public int getId_() {
         return id_;

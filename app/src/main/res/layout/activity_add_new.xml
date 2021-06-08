@@ -104,6 +104,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/design_default_color_primary"
+        android:onClick="onClickConfirmNew"
         android:src="@drawable/ic_baseline_check_24_white"
         app:borderWidth="0dp"
         app:fabSize="normal"
