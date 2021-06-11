@@ -11,9 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
-        <activity android:name=".AddNewActivity"
-            android:label="Add to my collection"></activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/Theme.Project1.NoActionBar"></activity>
+        <activity
+            android:name=".AddNewActivity"
+            android:label="Add to my collection" />
+        <activity
+            android:name=".MainActivity"
             android:label="My Watchlist">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

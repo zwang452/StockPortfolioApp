@@ -6,78 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".AddNewActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="120dp"
-        android:layout_gravity="center|top"
-        app:startIconDrawable="@drawable/ic_baseline_store_24"
-        app:expandedHintEnabled="false"
-        app:startIconContentDescription="@string/about">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/companyName"
-            android:paddingBottom="8dp"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:hint="@string/companyName" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center|top"
-        app:expandedHintEnabled="false"
-        app:startIconDrawable="@drawable/ic_baseline_code_24">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/companyCode"
-            android:layout_width="match_parent"
-            android:paddingBottom="8dp"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:hint="@string/companyCode" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="120dp"
+                app:expandedHintEnabled="false"
+                app:startIconContentDescription="@string/about"
+                app:startIconDrawable="@drawable/ic_baseline_store_24">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="190dp"
-        android:layout_gravity="center|top"
-        app:expandedHintEnabled="false"
-        app:startIconDrawable="@drawable/ic_baseline_attach_money_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/companyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/companyName"
+                    android:inputType="text"
+                    android:paddingBottom="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/priceNow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="8dp"
-            android:inputType="text"
-            android:hint="@string/currentPrice" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="50dp"
+                app:expandedHintEnabled="false"
+                app:startIconDrawable="@drawable/ic_baseline_code_24">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="260dp"
-        android:layout_gravity="center|top"
-        app:expandedHintEnabled="false"
-        app:startIconDrawable="@drawable/ic_outline_shuffle_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/companyCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/companyCode"
+                    android:inputType="text"
+                    android:paddingBottom="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/priceChange"
-            android:layout_width="match_parent"
-            android:paddingBottom="8dp"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:hint="@string/change" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="190dp"
+                app:expandedHintEnabled="false"
+                app:startIconDrawable="@drawable/ic_baseline_attach_money_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/priceNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/currentPrice"
+                    android:inputType="text"
+                    android:paddingBottom="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="260dp"
+                app:expandedHintEnabled="false"
+                app:startIconDrawable="@drawable/ic_outline_shuffle_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/priceChange"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/change"
+                    android:inputType="text"
+                    android:paddingBottom="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="350dp"
+                android:layout_marginBottom="50dp">
+
+                <TextView
+                    android:id="@+id/switchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="100dp"
+                    android:text="@string/switchText"></TextView>
+
+                <Switch
+                    android:id="@+id/customizedNameSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </ScrollView>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -122,5 +154,6 @@
         app:borderWidth="0dp"
         app:fabSize="normal"
         app:tint="@null" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

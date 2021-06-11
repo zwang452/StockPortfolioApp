@@ -224,4 +224,9 @@ public class MainActivity extends AppCompatActivity {
                     stock.getPrice_(),stock.getChange_());
         }
     }
+
+    public void onButtonAbout(View view) {
+        Intent intent = new Intent(this,AboutActivity.class);
+        startActivity(intent);
+    }
 }

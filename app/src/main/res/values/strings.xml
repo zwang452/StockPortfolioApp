@@ -7,4 +7,21 @@
     <string name="companyCode">Company Code</string>
     <string name="currentPrice">Real Time Price</string>
     <string name="change">Change From Previous Closing</string>
+    <string name="switchText">Customize Name</string>
+    <string name="title_activity_about">About:</string>
+    <string name="large_text">
+        "Zitong Wang\n\n\n"
+        "Basic usage\n\n"
+        "Click the + button to add a new stock by company code to your list.\n\n"
+        "Once a stock code is entered, click the + button again to request its information.\n\n"
+        "Upon successful information retrieval, you can choose to customize the company name that "
+        "will show up in your list, then click the checkmark button to proceed.\n\n"
+        "To Delete a record, swipe left. \n\n\n"
+        "ToDos\n\n"
+        "Add refresh functionality to existing records\n\n\n"
+        "APIs used:\n\n"
+        "Twelve Data : Quote and Real-Time Price, free-tier\n\n"
+        "Clearbit : Logo"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>
